@@ -1,0 +1,204 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Fonts */
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/karla/400.css";
+@import "@fontsource/karla/500.css";
+@import "@fontsource/karla/600.css";
+@import "@fontsource/karla/700.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Font families */
+  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "Cascadia Code", monospace;
+
+  /* Border radius tokens */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Colors mapped to CSS variables for shadcn/ui */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+}
+
+/*
+ * Light mode (default)
+ * Medical/Healthcare palette from design screenshots:
+ *   #1F1F1F, #6A6E83, #A8B1CE, #F7F8FC,
+ *   #5A81FA (primary), #2B318A (dark navy),
+ *   #FBB03B (amber), #F2F5FF, #FFFFFF
+ */
+:root {
+  --background: #F7F8FC;
+  --foreground: #1F1F1F;
+
+  --card: #FFFFFF;
+  --card-foreground: #1F1F1F;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #1F1F1F;
+
+  --primary: #5A81FA;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #F2F5FF;
+  --secondary-foreground: #2B318A;
+
+  --muted: #F2F5FF;
+  --muted-foreground: #6A6E83;
+
+  --accent: #F2F5FF;
+  --accent-foreground: #2B318A;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  --success: #22C55E;
+  --success-foreground: #FFFFFF;
+
+  --warning: #FBB03B;
+  --warning-foreground: #1F1F1F;
+
+  --info: #3B82F6;
+  --info-foreground: #FFFFFF;
+
+  --border: #E2E4ED;
+  --input: #A8B1CE;
+  --ring: #5A81FA;
+
+  --chart-1: #5A81FA;
+  --chart-2: #2B318A;
+  --chart-3: #FBB03B;
+  --chart-4: #6A6E83;
+  --chart-5: #A8B1CE;
+
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1F1F1F;
+  --sidebar-primary: #5A81FA;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F2F5FF;
+  --sidebar-accent-foreground: #2B318A;
+  --sidebar-border: #E2E4ED;
+  --sidebar-ring: #5A81FA;
+}
+
+/*
+ * Dark mode
+ */
+.dark {
+  --background: #121318;
+  --foreground: #E8EAF0;
+
+  --card: #1A1B23;
+  --card-foreground: #E8EAF0;
+
+  --popover: #1A1B23;
+  --popover-foreground: #E8EAF0;
+
+  --primary: #5A81FA;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #1E2030;
+  --secondary-foreground: #A8B1CE;
+
+  --muted: #1E2030;
+  --muted-foreground: #6A6E83;
+
+  --accent: #1E2030;
+  --accent-foreground: #A8B1CE;
+
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  --success: #16A34A;
+  --success-foreground: #FFFFFF;
+
+  --warning: #FBB03B;
+  --warning-foreground: #1F1F1F;
+
+  --info: #2563EB;
+  --info-foreground: #FFFFFF;
+
+  --border: #2E3148;
+  --input: #2E3148;
+  --ring: #5A81FA;
+
+  --chart-1: #6B92FF;
+  --chart-2: #4A52B5;
+  --chart-3: #FCC565;
+  --chart-4: #8B90A8;
+  --chart-5: #5A5F7A;
+
+  --sidebar: #1A1B23;
+  --sidebar-foreground: #E8EAF0;
+  --sidebar-primary: #5A81FA;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1E2030;
+  --sidebar-accent-foreground: #A8B1CE;
+  --sidebar-border: #2E3148;
+  --sidebar-ring: #5A81FA;
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
