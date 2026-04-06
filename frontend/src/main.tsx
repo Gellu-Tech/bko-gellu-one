@@ -13,6 +13,7 @@ import ItemShowcase from './pages/styleguide/components/item/page.tsx'
 import DataTableShowcase from './pages/styleguide/components/data-table/page.tsx'
 import SwitchShowcase from './pages/styleguide/components/switch/page.tsx'
 import TooltipShowcase from './pages/styleguide/components/tooltip/page.tsx'
+import CalendarShowcase from './pages/styleguide/components/calendar/page.tsx'
 import ChartShowcase from './pages/styleguide/components/chart/page.tsx'
 
 createRoot(document.getElementById('root')!).render(
@@ -30,6 +31,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="components/data-table" element={<DataTableShowcase />} />
           <Route path="components/switch" element={<SwitchShowcase />} />
           <Route path="components/tooltip" element={<TooltipShowcase />} />
+          <Route path="components/calendar" element={<CalendarShowcase />} />
           <Route path="components/chart" element={<ChartShowcase />} />
         </Route>
       </Routes>

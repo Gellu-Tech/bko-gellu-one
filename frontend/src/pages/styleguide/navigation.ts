@@ -25,6 +25,7 @@ export const styleguideNav: NavSection[] = [
       { title: "Data Table", href: "/styleguide/components/data-table" },
       { title: "Switch", href: "/styleguide/components/switch" },
       { title: "Tooltip", href: "/styleguide/components/tooltip" },
+      { title: "Calendar", href: "/styleguide/components/calendar" },
       { title: "Chart", href: "/styleguide/components/chart" },
     ],
   },
