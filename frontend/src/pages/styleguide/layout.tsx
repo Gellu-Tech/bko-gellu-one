@@ -1,55 +1,34 @@
-import { NavLink, Outlet } from "react-router-dom"
-import { styleguideNav } from "./navigation"
-import { cn } from "@/lib/utils"
+import type { CSSProperties } from "react"
+import { Outlet } from "react-router-dom"
+
+import { StyleguideSidebar } from "@/components/styleguide-sidebar"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 
 export function StyleguideLayout() {
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <aside className="w-64 border-r border-border bg-card p-6 overflow-y-auto sticky top-0 h-screen shrink-0">
-        <NavLink to="/styleguide" className="block mb-6">
-          <h2 className="font-heading text-lg font-semibold text-foreground">
-            Design System
-          </h2>
-        </NavLink>
+    <SidebarProvider
+      style={
+        {
+          "--sidebar-width-icon": "4rem",
+        } as CSSProperties
+      }
+    >
+      <StyleguideSidebar />
 
-        <nav className="space-y-6">
-          {styleguideNav.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
-                {section.title}
-              </h3>
-              {section.items.length > 0 && (
-                <ul className="space-y-1">
-                  {section.items.map((item) => (
-                    <li key={item.href}>
-                      <NavLink
-                        to={item.href}
-                        end={item.href === "/styleguide"}
-                        className={({ isActive }) =>
-                          cn(
-                            "block rounded-md px-3 py-2 text-sm transition-colors",
-                            isActive
-                              ? "bg-primary/10 text-primary font-medium"
-                              : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                          )
-                        }
-                      >
-                        {item.title}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </nav>
-      </aside>
+      <SidebarInset>
+        <header className="sticky top-0 z-20 flex h-14 items-center gap-3 border-b border-border bg-background/90 px-4 backdrop-blur">
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-foreground">Styleguide</p>
+            <p className="truncate text-xs text-muted-foreground">
+              shadcn/ui components aligned with the project design system
+            </p>
+          </div>
+        </header>
 
-      {/* Main content */}
-      <main className="flex-1 p-8 overflow-y-auto">
-        <Outlet />
-      </main>
-    </div>
+        <div className="flex-1 overflow-y-auto p-4 md:p-8">
+          <Outlet />
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
   )
 }

@@ -7,6 +7,7 @@ import App from './App.tsx'
 import { StyleguideLayout } from './pages/styleguide/layout.tsx'
 import StyleguideHome from './pages/styleguide/page.tsx'
 import SliderShowcase from './pages/styleguide/components/slider/page.tsx'
+import SidebarShowcase from './pages/styleguide/components/sidebar/page.tsx'
 import TableShowcase from './pages/styleguide/components/table/page.tsx'
 import TextareaShowcase from './pages/styleguide/components/textarea/page.tsx'
 import ItemShowcase from './pages/styleguide/components/item/page.tsx'
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/styleguide" element={<StyleguideLayout />}>
           <Route index element={<StyleguideHome />} />
           <Route path="components/slider" element={<SliderShowcase />} />
+          <Route path="components/sidebar" element={<SidebarShowcase />} />
           <Route path="components/table" element={<TableShowcase />} />
           <Route path="components/textarea" element={<TextareaShowcase />} />
           <Route path="components/item" element={<ItemShowcase />} />

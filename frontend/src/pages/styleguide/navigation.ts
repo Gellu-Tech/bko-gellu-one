@@ -19,6 +19,7 @@ export const styleguideNav: NavSection[] = [
     title: "Components",
     items: [
       { title: "Slider", href: "/styleguide/components/slider" },
+      { title: "Sidebar", href: "/styleguide/components/sidebar" },
       { title: "Table", href: "/styleguide/components/table" },
       { title: "Textarea", href: "/styleguide/components/textarea" },
       { title: "Item", href: "/styleguide/components/item" },

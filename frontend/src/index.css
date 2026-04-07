@@ -202,3 +202,13 @@
     @apply font-heading;
   }
 }
+
+.sidebar-preview [data-slot="sidebar-container"] {
+  position: absolute;
+  inset-block: 0;
+  height: 100%;
+}
+
+.sidebar-preview [data-slot="sidebar-gap"] {
+  min-height: 100%;
+}
